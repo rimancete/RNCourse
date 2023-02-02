@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { Button, StyleSheet, TextInput, View, Modal } from "react-native";
 
-  
 interface GoalInputProps {
-    onAddGoal: (value: string) => void;
+  onAddGoal: (value: string) => void;
+  onClose: () => void;
+  visible: boolean;
 }
 
-export default function GoalInput({ onAddGoal }: GoalInputProps) {
+export default function GoalInput({ onAddGoal, visible, onClose }: GoalInputProps) {
   const [enterdGoalText, setEnterdGoalText] = useState("");
 
   const goalInputHandler = (text: string) => {
@@ -15,27 +16,36 @@ export default function GoalInput({ onAddGoal }: GoalInputProps) {
 
   const addGoalHandler = () => {
     onAddGoal(enterdGoalText);
-    setEnterdGoalText('');
-};
+    setEnterdGoalText("");
+  };
   return (
-    <View style={styles.inputContainer}>
-      <TextInput
-        placeholder="Your course goal!"
-        style={styles.textInput}
-        onChangeText={goalInputHandler}
-        value={enterdGoalText}
-      />
-      <Button title="Add goal" onPress={addGoalHandler} />
-    </View>
+    <Modal visible={visible} animationType="slide">
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Your course goal!"
+          style={styles.textInput}
+          onChangeText={goalInputHandler}
+          value={enterdGoalText}
+        />
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button title="Add goal" onPress={addGoalHandler} />
+          </View>
+          <View style={styles.button}>
+            <Button title="Cancel" onPress={onClose} />
+          </View>
+        </View>
+      </View>
+    </Modal>
   );
 }
 
 const styles = StyleSheet.create({
   inputContainer: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
+    padding: 16,
     marginBottom: 24,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
@@ -43,10 +53,17 @@ const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
     borderColor: "#ccc",
-    width: "70%",
-    marginRight: 8,
+    width: "100%",
     paddingVertical: 8,
     paddingHorizontal: 12,
     borderRadius: 5,
   },
+  buttonContainer: {
+    flexDirection: "row",
+    marginTop: 16
+  },
+  button: {
+    width: '30%',
+    marginHorizontal: 8
+  }
 });
