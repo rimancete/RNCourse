@@ -28,7 +28,7 @@ export default function App() {
         { id: Math.random().toString(), text: enterdGoalText },
       ];
     });
-    setModalVisable(!modalVisable)
+    setModalVisable(!modalVisable);
   };
 
   const deleteGoalHandler = (id: number) => {
@@ -52,8 +52,16 @@ export default function App() {
   const keyExtractor = (item: CourseGoalsType) => item.id;
   return (
     <View style={styles.appContainer}>
-      <Button title="Add New Goal" color="#5e0acc" onPress={startAddGoalHandler} />
-      <GoalInput onAddGoal={addGoalHandler} visible={modalVisable} onClose={closeAddGoalHandler} />
+      <Button
+        title="Add New Goal"
+        color="#5e0acc"
+        onPress={startAddGoalHandler}
+      />
+      <GoalInput
+        onAddGoal={addGoalHandler}
+        visible={modalVisable}
+        onClose={closeAddGoalHandler}
+      />
       <View style={styles.goalsContainer}>
         <FlatList
           data={courseGoals}
