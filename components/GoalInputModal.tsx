@@ -14,7 +14,7 @@ interface GoalInputProps {
   visible: boolean;
 }
 
-export default function GoalInput({
+export default function GoalInputModal({
   onAddGoal,
   visible,
   onClose,

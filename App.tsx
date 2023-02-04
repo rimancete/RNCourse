@@ -7,7 +7,7 @@ import {
   ListRenderItemInfo
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import GoalInput from "./components/GoalInput";
+import GoalInputModal from "./components/GoalInputModal";
 import GoalItem from "./components/GoalItem";
 import { CourseGoalsType } from "./interfaces";
 
@@ -60,7 +60,7 @@ export default function App() {
           color="#a065ec"
           onPress={startAddGoalHandler}
         />
-        <GoalInput
+        <GoalInputModal
           onAddGoal={addGoalHandler}
           visible={modalVisable}
           onClose={closeAddGoalHandler}
