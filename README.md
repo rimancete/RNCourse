@@ -48,6 +48,5 @@ Como o projeto é acadêmico, o foco realmente foi esse. Tendo isso em mente, se
 - Funcionalidade
   - Edição de objetivos
   - Não permitir inserir o mesmo alvo duas vezes ou mais
-
-- Bug
-  - Ajustar *statusBar* do modal também para o modo `light`.
+  - Não permitir inserir texto vazio
+  - Limpar lista

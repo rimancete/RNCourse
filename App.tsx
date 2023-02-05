@@ -4,7 +4,7 @@ import {
   FlatList,
   StyleSheet,
   View,
-  ListRenderItemInfo
+  ListRenderItemInfo,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import GoalInputModal from "./components/GoalInputModal";
@@ -81,10 +81,11 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 50,
+    marginTop: 100,
     paddingHorizontal: 16,
   },
   goalsContainer: {
-    flex: 6,
+    flex: 2,
+    marginTop: 30,
   },
 });
