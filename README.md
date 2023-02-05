@@ -1,7 +1,7 @@
 
 # RNCourse
 
-Este projeto lista objetivos, e permite a inclusão e deleção de posts
+Este projeto lista objetivos, e permite a inclusão e deleção de items
 
 ### Mobile Perspectiva:
 ![nav](./docs/app.gif)
@@ -29,7 +29,7 @@ Antes de instalar/rodar o projeto, você pode precisar dos seguintes itens:
 
 - [ReactJS](https://pt-br.reactjs.org/) - Biblioteca Front-end.
 - [TypeScript](https://www.typescriptlang.org/) - Superset JavaScript.
-- [React Native](https://pt-br.reactjs.org/) - Framework Front-end.
+- [React Native](https://reactnative.dev/) - Framework Front-end.
 
 ## Autor
 
